@@ -3,14 +3,19 @@
 // It is used to achieve abstraction, polymorphism and multiple inheritances.
 // It is also define as a public contract between a class and the user.
 
-
 class Electronic {
-protected boolean isOn; 
-public Electronic() { this.isOn = false;}
-public void powerOn() {
-        if (!isOn) { isOn = true;
-System.out.println("Electronic device is now on.");} 
-else {   System.out.println("Electronic device is already on.");
+    protected boolean isOn;
+
+    public Electronic() {
+        this.isOn = false;
+    }
+
+    public void powerOn() {
+        if (!isOn) {
+            isOn = true;
+            System.out.println("Electronic device is now on.");
+        } else {
+            System.out.println("Electronic device is already on.");
         }
     }
 
@@ -24,45 +29,49 @@ else {   System.out.println("Electronic device is already on.");
     }
 }
 
-
 // class Computer extends Electronic {
-//     // Additional state specific to computers
-//     private String brand;
-//     private int storage; // in gigabytes
-//     private int ram; // in gigabytes
+// // Additional state specific to computers
+// private String brand;
+// private int storage; // in gigabytes
+// private int ram; // in gigabytes
 
-//     // Constructor to initialize the Computer object
-//     public Computer(String brand, int storage, int ram) {
-//         super(); // Call the superclass constructor
-//         this.brand = brand;
-//         this.storage = storage;
-//         this.ram = ram;
-//     }
+// // Constructor to initialize the Computer object
+// public Computer(String brand, int storage, int ram) {
+// super(); // Call the superclass constructor
+// this.brand = brand;
+// this.storage = storage;
+// this.ram = ram;
+// }
 
-//     // Specific behavior for Computer
-//     public void upgradeRam(int additionalRam) {
-//         this.ram += additionalRam;
-//         System.out.println("RAM upgraded. Total RAM: " + ram + " GB.");
-//     }
+// // Specific behavior for Computer
+// public void upgradeRam(int additionalRam) {
+// this.ram += additionalRam;
+// System.out.println("RAM upgraded. Total RAM: " + ram + " GB.");
+// }
 
-//     // Overriding the display method to include computer specifics
-//     public void displaySpecs() {
-//         System.out.println("Brand: " + brand);
-//         System.out.println("Storage: " + storage + " GB");
-//         System.out.println("RAM: " + ram + " GB");
-//         System.out.println("Power status: " + (isOn ? "On" : "Off"));
-//     }
+// // Overriding the display method to include computer specifics
+// public void displaySpecs() {
+// System.out.println("Brand: " + brand);
+// System.out.println("Storage: " + storage + " GB");
+// System.out.println("RAM: " + ram + " GB");
+// System.out.println("Power status: " + (isOn ? "On" : "Off"));
+// }
 // }
 
 // Explanation of Methods:
-// enableBluetooth(): This method will turn on the Bluetooth functionality of the device.
-// disableBluetooth(): This method will turn off the Bluetooth functionality of the device.
-// connectToDevice(String deviceName): Attempts to establish a Bluetooth connection with another device identified by deviceName. It returns a boolean indicating success or failure.
-// disconnectDevice(): Terminates the Bluetooth connection with the currently connected device.
-// sendData(byte[] data): Sends data to the connected device. The data is passed as an array of bytes.
-// receiveData(): Returns data received from the connected device as an array of bytes.
-
-
+// enableBluetooth(): This method will turn on the Bluetooth functionality of
+// the device.
+// disableBluetooth(): This method will turn off the Bluetooth functionality of
+// the device.
+// connectToDevice(String deviceName): Attempts to establish a Bluetooth
+// connection with another device identified by deviceName. It returns a boolean
+// indicating success or failure.
+// disconnectDevice(): Terminates the Bluetooth connection with the currently
+// connected device.
+// sendData(byte[] data): Sends data to the connected device. The data is passed
+// as an array of bytes.
+// receiveData(): Returns data received from the connected device as an array of
+// bytes.
 
 interface BluetoothInterface {
     // Method to enable Bluetooth
@@ -83,6 +92,7 @@ interface BluetoothInterface {
     // Method to receive data from the connected device
     byte[] receiveData();
 }
+
 class Smartphone implements BluetoothInterface {
     private boolean bluetoothEnabled = false;
 
@@ -140,7 +150,6 @@ class Smartphone implements BluetoothInterface {
         }
     }
 }
-
 
 class Computer extends Electronic implements BluetoothInterface {
     // State specific to computers
@@ -204,9 +213,9 @@ class Computer extends Electronic implements BluetoothInterface {
     @Override
     public byte[] receiveData() {
         if (bluetoothEnabled) {
-        System.out.println("Receiving data...");
-        // Simulate receiving data
-        return "Received data".getBytes();
+            System.out.println("Receiving data...");
+            // Simulate receiving data
+            return "Received data".getBytes();
         } else {
             System.out.println("Bluetooth is not enabled. Cannot receive data.");
             return new byte[0];
@@ -238,10 +247,14 @@ class Computer extends Electronic implements BluetoothInterface {
 // We also should remember that:
 // we can’t instantiate interfaces directly
 // an interface can be empty, with no methods or variables in it
-// we can’t use the final word in the interface definition, as it will result in a compiler error
-// all interface declarations should have the public or default access modifier; the abstract modifier will be added automatically by the compiler
+// we can’t use the final word in the interface definition, as it will result in
+// a compiler error
+// all interface declarations should have the public or default access modifier;
+// the abstract modifier will be added automatically by the compiler
 // an interface method can’t be protected or final
-// up until Java 9, interface methods could not be private; however, Java 9 introduced the possibility to define private methods in interfaces
-// interface variables are public, static, and final by definition; we’re not allowed to change their visibility inter {
-    
+// up until Java 9, interface methods could not be private; however, Java 9
+// introduced the possibility to define private methods in interfaces
+// interface variables are public, static, and final by definition; we’re not
+// allowed to change their visibility inter {
+
 // }

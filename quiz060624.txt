@@ -1,0 +1,296 @@
+Skip to main content
+
+Dashboard
+Logout (PVR KRISHNA MANOJ KMIT)
+JAVA-Audi-2024
+Page path
+Dashboard
+KMIT
+II YEAR 2023-24
+JAVA-Audi-2024
+Exception Handling
+Quiz on Exceptions
+Dashboard / Quiz
+Started on	Thursday, 6 June 2024, 12:21 PM
+State	Finished
+Completed on	Thursday, 6 June 2024, 12:31 PM
+Time taken	9 mins 52 secs
+Grade	3.00 out of 10.00 (30%)
+Question 1
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+Consider the following code snippet. What is the result of the execution?
+public class Tester {
+public static void main(String[] args) {
+try{
+System.out.println(Double.valueOf("420.00"));
+}catch(Exception e){
+System.out.println("Some exception occurred");
+}catch(NumberFormatException ex){
+System.out.println("NumberFormatException occurred");
+}
+}
+}
+
+Select one:
+a. None of the above
+b. Compilation Error
+c. Runtime ExceptionCompilation Error
+d. 420.00
+Question 2
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+Consider the following code snippet:
+public class ExceptionTest {
+public static void main(String[] args) {
+try {
+try {
+int[] arr = new int[5];
+arr[10] = 100;
+} catch (ArithmeticException e) {
+System.out.println("Inner catch");
+} catch (Exception e) {
+System.out.println("Inner general catch");
+}
+} catch (ArrayIndexOutOfBoundsException e) {
+System.out.println("Outer catch");
+} catch (Exception e) {
+System.out.println("Outer general catch");
+}
+}
+}
+What will be the output when the code is executed?
+
+Select one:
+a. Inner catch
+b. Outer general catch
+c. Outer catch
+d. Inner general catch
+Question 3
+Complete
+Mark 1.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+What is the correct way to declare a method that can throw an IOException in Java?
+
+Select one:
+a. public void method() throws IOException
+b. public void method()
+c. public void method() throwsException IOException
+d. public void method() throw IOException
+Question 4
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+Consider the following code snippet:
+public class ExceptionTest {
+public static void main(String[] args) {
+try {
+methodA();
+} catch (Exception e) {
+System.out.println("Main catch");
+}
+}
+
+public static void methodA() {
+try {
+methodB();
+} catch (Exception e) {
+System.out.println("MethodA catch");
+throw e;
+}
+}
+
+public static void methodB() {
+throw new RuntimeException("Exception in methodB");
+}
+}
+What will be the output when the code is executed?
+
+Select one:
+a. MethodA catch and Main catch
+b. No output
+c. Main catch
+d. MethodA catch
+Question 5
+Complete
+Mark 1.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+What will be the output of the following code snippet?
+public class ExceptionTest {
+public static void main(String[] args) {
+try {
+int[] arr = new int[5];
+arr[10] = 50;
+} catch (ArrayIndexOutOfBoundsException e) {
+System.out.println("Array index out of bounds");
+try {
+int result = 10 / 0;
+} catch (ArithmeticException ex) {
+System.out.println("Division by zero");
+}
+}
+}
+}
+
+Select one:
+a. Array index out of bounds
+b. Array index out of bounds
+Division by zero
+c. Compilation error
+d. Division by zero
+Question 6
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+Consider the following code snippet
+
+public class ExceptionTest {
+public static void main(String[] args) {
+try {
+methodA();
+} catch (Exception e) {
+System.out.println("Caught in main: " + e);
+}
+}
+
+public static void methodA() {
+try {
+methodB();
+} catch (IllegalArgumentException e) {
+System.out.println("Caught in methodA: " + e);
+throw e;
+}
+}
+
+public static void methodB() {
+try {
+throw new IllegalArgumentException("Exception in methodB");
+} catch (NullPointerException e) {
+System.out.println("Caught in methodB: " + e);
+}
+}
+}
+
+What will b the ouput when executed?
+
+Select one:
+a. Caught in methodA: java.lang.IllegalArgumentException: Exception in methodB
+b. Caught in main: java.lang.IllegalArgumentException: Exception in methodB
+c. Caught in methodA: java.lang.NullPointerException
+d. Caught in methodB: java.lang.NullPointerException
+Question 7
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+Have a look at the following code:
+public class CalculateUtil {
+public static void calculateA() throws Exception {
+calculateB();
+calculateC();
+calculateD();
+}
+private void calculateB(){
+// code to calculate B
+}
+private void calculateC(){
+// code to calculate C
+}
+private void calculateD(){
+// code to calculate D
+}
+public static void main( String[] args) {
+try {
+CalculateUtil.calculateA();
+}
+catch(Exception e){
+// Line x
+}
+}
+}
+Any of these methods may throw an exception. As a programmer, we want to know the details of the method and the line of code which has raised the exception when calling CalculateUtil.calculateA (). Which method of the Exception class is appropriate for 'line x'?
+
+Select one:
+a. toString()
+b. getMessage()
+c. getExceptionMessage()
+d. printStackTrace()
+Question 8
+Complete
+Mark 1.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+What will be the output of the following Java program?
+class exception_handling
+{
+public static void main(String args[])
+{
+try
+{
+System.out.print("Hello" + " " + 1 / 0);
+}
+catch(ArithmeticException e)
+{
+System.out.print("World");
+}
+}
+}
+
+Select one:
+a. HelloWorld
+b. World
+c. Hello
+d. Hello World
+Question 9
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+What will be the output of the following code snippet?
+public class ExceptionTest {
+public static void main(String[] args) {
+try {
+try {
+int result = 10 / 0;
+} catch (ArithmeticException e) {
+System.out.println("Inner catch: Division by zero");
+throw e;
+}
+} catch (ArithmeticException e) {
+System.out.println("Outer catch: Division by zero");
+}
+}
+}
+
+Select one:
+a. Outer catch: Division by zero
+b. Compilation error
+c. Inner catch: Division by zero
+d. Inner catch: Division by zero
+Outer catch: Division by zero
+Question 10
+Complete
+Mark 0.00 out of 1.00
+Not flaggedNot flaggedFlag question
+Question text
+In Java, if an exception is not caught in the current method, what happens to it?
+
+Select one:
+a. The program terminates immediately.
+b. It is ignored and the program continues
+c. It is returned to the caller method.
+d. It is logged and suppressed.
+Finish review
+Skip Quiz navigation
+Quiz navigation
+Question 1 This page Question 2 This page Question 3 This page Question 4 This page Question 5 This page Question 6 This page Question 7 This page Question 8 This page Question 9 This page Question 10 This page
+Finish review
+Copyright © 2024 Teleparadigm Networks Pvt. Ltd. All Rights Reserved.Version 4.3
