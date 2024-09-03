@@ -14,7 +14,7 @@ public class library {
     public void issueBook(Book b, Customerr c) {
 
         Book[] books = c.b;
-        for (int i = 0; i < books.length; i++) {
+        for (int i = 0; i < books.length;) {
             if (books[i] == null) {
                 if (!b.isIssued) {
                     b.isIssued = true;
